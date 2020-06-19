@@ -1,0 +1,41 @@
+body, html{
+	background-color: #d9d9d9;
+
+}
+
+col{
+	margin: 0 auto;
+    width: 100px;
+}
+li{
+	list-style: none;
+}
+table, tr, td{
+	border: 2px solid yellow;
+	padding: 15px;
+}
+td{
+	padding-right: 15px;
+}
+
+
+.create{
+	padding-left: 10px;
+}
+.imgs{
+	height:100px;
+	width: 150px;
+}
+.pFail{
+	background-color: #ffffcc;
+	border: 2px solid white;
+	margin: 35px;
+	padding: 30px;
+}
+.homeBtn{
+	margin-right: 20px;
+}
+
+#tank{
+    transform: translate(0, 20%);
+}
