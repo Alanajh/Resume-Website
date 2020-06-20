@@ -6,6 +6,7 @@ $request_url = 'http://newsapi.org/v2/top-headlines?category=business&country=us
 
 $request_url2 = 'http://newsapi.org/v2/Everything?q=boeing&language=en&apikey=8e78d3fb179c4f219bb0f4d4145bb303';
 
+$cssFile = '';
 
 $curl = curl_init($request_url);
 
@@ -37,7 +38,7 @@ echo "
 		<!-- Latest compiled JavaScript -->
 		<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js\"></script>
 
-		<link rel=\"stylesheet\" type=\"text/css\" href=\"../css/loginCSS.css\">
+		<link rel=\"stylesheet\" type=\"text/css\" href=\"../css/$cssFile\">
 	</header>
 	<body>
 		<nav class=\"navbar navbar-expand-md navbar-light bg-light\">
