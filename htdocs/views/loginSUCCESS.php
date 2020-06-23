@@ -82,7 +82,15 @@ echo "
 		</nav>
 		<div class=\"container-fluid\">
 
-			<h2>Stock News</h2>
+			<ul style=\"overflow-x: auto \">
+				<li style=\"display: inline-block\"><h2>Stock News</h2></li>
+				<ul class=\"pagination\" style=\" float: right;\">
+					<li class=\"page-item active\"><a class=\"page-link\" >1</a></li>
+					<li class=\"page-item\"><a class=\"page-link\" >2</a></li>
+					<li class=\"page-item\"><a class=\"page-link\" >3</a></li>
+					<li class=\"page-item\"><a class=\"page-link\" >4</a></li>
+				</ul>
+			</ul>
 			<hr>
 
 			<div class=\"tab-content\" id=\"myTabContent\">
@@ -93,26 +101,31 @@ echo "
 								<td><b>Date & Time</b></td>
 								<td><b>News</b></td>
 								<td><b>Author</b></td>
-								<td><b>Country</b></td>
-								<td><b>Industry</b></td>
+								<td><b></b></td>
 							</tr>
 						</th>";
 
-					for( $i = 0; $i < 5; $i ++){
+					for( $i = 0; $i < 20; $i ++){
 						
 						$news = $results['articles'][$i]['title'];
 						$author = $results['articles'][$i]['author'];
 						$url = $results['articles'][$i]['url'];
 						$content = $results['articles'][$i]['content'];
+						$urlToImage= $results['articles'][$i]['urlToImage'];
 
 						$dateTime = $results['articles'][$i]['publishedAt'];
 						$timezone = date_default_timezone_set('America/Chicago');
 						$dt = date("D, M d, Y h:i:s a T", strtotime($dateTime));
 
+						if(!$urlToImage){
+							$urlToImage = '../img/logo.jpg';
+						}
+
 						echo "<tr>
-								<td>$dt<hr></td>
-								<td><a href=$url>$news></a></td>
-								<td>$author<hr></td>
+								<td class=\"col1\">$dt<hr></td>
+								<td class=\"col2\"><a href=$url>$news</a></td>
+								<td class=\"col3\">$author<hr></td>
+								<td><img src=$urlToImage class=\"visuals\"></td>
 							  </tr> 
 							  ";
 					}
